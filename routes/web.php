@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeBackOfficeController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index']);
+
+
+
+// BACK - OFFICE
+Route::get('/home/administration', [HomeBackOfficeController::class,'index'])->name('homebo');

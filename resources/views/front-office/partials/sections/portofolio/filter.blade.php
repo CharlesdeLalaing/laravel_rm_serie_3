@@ -2,10 +2,10 @@
     <div class="col-md-4 col-md-offset-4 text-center">
         <h2>Our Work</h2>
         <h3>
-            <span class="filter label label-default" data-filter="all">ALL</span>
-            <span class="filter label label-default" data-filter="bw">B&amp;W</span>
-            <span class="filter label label-default" data-filter="nature">Nature</span>
-            <span class="filter label label-default" data-filter="portraits">Portraits</span>
+            @foreach ($portofolios as $portofolio)
+                <span class="filter label label-default"
+                    data-filter="{{ $portofolio->data_filter }}">{{ $portofolio->filter }}</span>
+            @endforeach
         </h3>
         <hr>
     </div>

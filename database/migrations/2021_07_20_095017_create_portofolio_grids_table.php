@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAboutsTable extends Migration
+class CreatePortofolioGridsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateAboutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('abouts', function (Blueprint $table) {
+        Schema::create('portofolio_grids', function (Blueprint $table) {
             $table->id();
-            $table->longText('description_about');
+            $table->string('class_name');
+            $table->string('data_category');
+            $table->string('data_target');
+            $table->string('display');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateAboutsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('abouts');
+        Schema::dropIfExists('portofolio_grids');
     }
 }

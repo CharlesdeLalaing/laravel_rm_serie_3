@@ -4,11 +4,9 @@
         <img class="img-rounded" alt="Company Logo" src="{{ asset('img/logo.jpg') }}" />
         <h2><em>Company Name</em></h2>
         <ul class="list-inline">
-            <li><i class="fa fa-facebook fa-3x"></i></li>
-            <li><i class="fa fa-twitter fa-3x"></i></li>
-            <li><i class="fa fa-google-plus fa-3x"></i></li>
-            <li><i class="fa fa-linkedin fa-3x"></i></li>
-            <li><i class="fa fa-pinterest fa-3x"></i></li>
+            @foreach ($headerLogos as $headerLogo)
+                <li><i class="{{ $headerLogo->logo }}"></i></li>
+            @endforeach
         </ul>
         <br>
         <a href="#about" class="btn btn-top">Learn More</a>
