@@ -21,4 +21,22 @@ class ContactController extends Controller
         $show = Contact::find($id);
         return view('back-office.show.bo_contact_show', compact('show'));
     }
+    public function edit($id){
+        $edit = Contact::find($id);
+        return view('back-office.edit.bo_contact_edit', compact('edit'));
+    }
+    public function update($id, Request $request){
+        $update = Contact::find($id);
+        $update->name = $request->name;
+        $update->email = $request->email;
+        $update->subject = $request->subject;
+        $update->message = $request->message;
+        $update->save();
+        return redirect('/contact/administration/'.$id.'/show');
+    }
+    public function destroy($id){
+        $destroy = Contact::find($id);
+        $destroy->delete();
+        return redirect('/home/administration');
+    }
 }

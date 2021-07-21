@@ -6,8 +6,8 @@
                 <div class="card-body">
                     <h5 class="card-title">About section</h5>
                     <p class="card-text">Description: {{$show->description_about}}</p>
-                    <a class="btn btn-success text-white mb-3" href="/animals/{{$show->id}}/edit">EDIT</a>
-                    <form action="/animals/{{$show->id}}/delete" method="POST">
+                    <a class="btn btn-success text-white mb-3" href="/about/administration/{{$show->id}}/edit">EDIT</a>
+                    <form action="/about/administration/{{$show->id}}/destroy" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger text-white" type="submit">DELETE</button>

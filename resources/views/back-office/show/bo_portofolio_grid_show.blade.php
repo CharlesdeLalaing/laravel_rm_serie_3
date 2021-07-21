@@ -10,8 +10,8 @@
                     <p class="card-text">Data target: {{$show->data_target}}</p>
                     <p class="card-text">Display: {{$show->display}}</p>
                     <p class="card-text">Name: {{$show->name}}</p>
-                    <a class="btn btn-success text-white mb-3" href="/animals/{{$show->id}}/edit">EDIT</a>
-                    <form action="/animals/{{$show->id}}/delete" method="POST">
+                    <a class="btn btn-success text-white mb-3" href="/portofolio-grid/administration/{{$show->id}}/edit">EDIT</a>
+                    <form action="/portofolio-grid/administration/{{$show->id}}/destroy" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger text-white" type="submit">DELETE</button>

@@ -27,4 +27,23 @@ class PortofolioGridController extends Controller
         $show = Portofolio_grid::find($id);
         return view('back-office.show.bo_portofolio_grid_show', compact('show'));
     }
+    public function edit($id){
+        $edit = Portofolio_grid::find($id);
+        return view('back-office.edit.bo_portofolio_grid_edit', compact('edit'));
+    }
+    public function update($id, Request $request){
+        $update = Portofolio_grid::find($id);
+        $update->class_name = $request->class_name;
+        $update->data_category = $request->data_category;
+        $update->data_target = $request->data_target;
+        $update->display = $request->display;
+        $update->name = $request->name;
+        $update->save();
+        return redirect('/portofolio-grid/administration/'.$id.'/show');
+    }
+    public function destroy($id){
+        $destroy = Portofolio_grid::find($id);
+        $destroy->delete();
+        return redirect('/home/administration');
+    }
 }

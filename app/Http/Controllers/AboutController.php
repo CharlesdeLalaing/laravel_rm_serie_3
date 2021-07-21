@@ -17,4 +17,19 @@ class AboutController extends Controller
         $show = About::find($id);
         return view('back-office.show.bo_about_show', compact('show'));
     }
+    public function edit($id){
+        $edit = About::find($id);
+        return view('back-office.edit.bo_about_edit', compact('edit'));
+    }
+    public function update($id, Request $request){
+        $update = About::find($id);
+        $update->description_about = $request->description_about;
+        $update->save();
+        return redirect('/about/administration/'.$id.'/show');
+    }
+    public function destroy($id){
+        $destroy = About::find($id);
+        $destroy->delete();
+        return redirect('/home/administration');
+    }
 }

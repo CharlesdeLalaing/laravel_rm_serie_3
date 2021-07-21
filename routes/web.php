@@ -49,5 +49,33 @@ Route::get('/portofolio/administration/{id}/show',[PortofolioController::class,'
 Route::get('/portofolio-grid/administration/{id}/show',[PortofolioGridController::class,'show']);
 Route::get('/contact/administration/{id}/show',[ContactController::class,'show']);
 
+//EDIT
+Route::get('/top/administration/{id}/edit',[Header_logoController::class,'edit']);
+Route::get('/about/administration/{id}/edit',[AboutController::class,'edit']);
+Route::get('/service/administration/{id}/edit',[ServiceController::class,'edit']);
+Route::get('/portofolio/administration/{id}/edit',[PortofolioController::class,'edit']);
+Route::get('/portofolio-grid/administration/{id}/edit',[PortofolioGridController::class,'edit']);
+Route::get('/contact/administration/{id}/edit',[ContactController::class,'edit']);
+
+
+//UPDATE
+Route::put('/top/administration/{id}/update',[Header_logoController::class,'update']);
+Route::put('/about/administration/{id}/update',[AboutController::class,'update']);
+Route::put('/service/administration/{id}/update',[ServiceController::class,'update']);
+Route::put('/portofolio/administration/{id}/update',[PortofolioController::class,'update']);
+Route::put('/portofolio-grid/administration/{id}/update',[PortofolioGridController::class,'update']);
+Route::put('/contact/administration/{id}/update',[ContactController::class,'update']);
+
+
+//DELETE
+Route::delete('/top/administration/{id}/destroy',[Header_logoController::class,'destroy']);
+Route::delete('/about/administration/{id}/destroy',[AboutController::class,'destroy']);
+Route::delete('/service/administration/{id}/destroy',[ServiceController::class,'destroy']);
+Route::delete('/portofolio/administration/{id}/destroy',[PortofolioController::class,'destroy']);
+Route::delete('/portofolio-grid/administration/{id}/destroy',[PortofolioGridController::class,'destroy']);
+Route::delete('/contact/administration/{id}/destroy',[ContactController::class,'destroy']);
+
+
+
 
 

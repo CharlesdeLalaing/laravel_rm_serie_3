@@ -7,8 +7,8 @@
                     <h5 class="card-title">Top Header section</h5>
                     <p class="card-text">SM name: {{$show->name}}</p>
                     <p class="card-text">Logo: {{$show->logo}}</p>
-                    <a class="btn btn-success text-white mb-3" href="/animals/{{$show->id}}/edit">EDIT</a>
-                    <form action="/animals/{{$show->id}}/delete" method="POST">
+                    <a class="btn btn-success text-white mb-3" href="/top/administration/{{$show->id}}/edit">EDIT</a>
+                    <form action="/top/administration/{{$show->id}}/destroy" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger text-white" type="submit">DELETE</button>

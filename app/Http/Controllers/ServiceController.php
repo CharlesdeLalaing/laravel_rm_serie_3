@@ -22,4 +22,21 @@ class ServiceController extends Controller
         $show = Service::find($id);
         return view('back-office.show.bo_service_show', compact('show'));
     }
+    public function edit($id){
+        $edit = Service::find($id);
+        return view('back-office.edit.bo_service_edit', compact('edit'));
+    }
+    public function update($id, Request $request){
+        $update = Service::find($id);
+        $update->icon_service = $request->icon_service;
+        $update->title_card = $request->title_card;
+        $update->description_card = $request->description_card;
+        $update->save();
+        return redirect('/service/administration/'.$id.'/show');
+    }
+    public function destroy($id){
+        $destroy = Service::find($id);
+        $destroy->delete();
+        return redirect('/home/administration');
+    }
 }
