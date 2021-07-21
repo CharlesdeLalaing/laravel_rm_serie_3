@@ -5,7 +5,7 @@
         <h2><em>Company Name</em></h2>
         <ul class="list-inline">
             @foreach ($headerLogos as $headerLogo)
-                <li><i class="{{ $headerLogo->logo }}"></i></li>
+                <li><i class="{{$headerLogo->logo}} fa-3x"></i></li>
             @endforeach
         </ul>
         <br>
