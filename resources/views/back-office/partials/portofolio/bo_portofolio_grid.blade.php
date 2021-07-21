@@ -14,17 +14,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($bo_portofolio_grids as $bo_portofolio_grid)
+            @forelse ($bo_portofolio_grids as $bo_portofolio_grid)
                 <tr>
-                    <td>{{$bo_portofolio_grid->id}}</td>
-                    <td>{{$bo_portofolio_grid->class_name}}</td>
-                    <td>{{$bo_portofolio_grid->data_category}}</td>
-                    <td>{{$bo_portofolio_grid->data_target}}</td>
-                    <td>{{$bo_portofolio_grid->display}}</td>
-                    <td>{{$bo_portofolio_grid->name}}</td>
-                    <td><a href="/portofolio-grid/administration/{{$bo_portofolio_grid->id}}/show"><button>SHOW</button></a></td>
+                    <td>{{ $bo_portofolio_grid->id }}</td>
+                    <td>{{ $bo_portofolio_grid->class_name }}</td>
+                    <td>{{ $bo_portofolio_grid->data_category }}</td>
+                    <td>{{ $bo_portofolio_grid->data_target }}</td>
+                    <td>{{ $bo_portofolio_grid->display }}</td>
+                    <td>{{ $bo_portofolio_grid->name }}</td>
+                    <td><a
+                            href="/portofolio-grid/administration/{{ $bo_portofolio_grid->id }}/show"><button>SHOW</button></a>
+                    </td>
                 </tr>
-            @endforeach
+            @empty
+                <p class="bg-danger text-white p-1">No Data</p>
+            @endforelse
         </tbody>
-    </table>    
+    </table>
 </div>

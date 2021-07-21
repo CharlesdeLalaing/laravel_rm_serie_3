@@ -12,16 +12,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($bo_contacts as $bo_contact)
+            @forelse ($bo_contacts as $bo_contact)
                 <tr>
-                    <td>{{$bo_contact->id}}</td>
-                    <td>{{$bo_contact->name}}</td>
-                    <td>{{$bo_contact->email}}</td>
-                    <td>{{$bo_contact->subject}}</td>
-                    <td>{{$bo_contact->message}}</td>
-                    <td><a href="/contact/administration/{{$bo_contact->id}}/show"><button>SHOW</button></a></td>
+                    <td>{{ $bo_contact->id }}</td>
+                    <td>{{ $bo_contact->name }}</td>
+                    <td>{{ $bo_contact->email }}</td>
+                    <td>{{ $bo_contact->subject }}</td>
+                    <td>{{ $bo_contact->message }}</td>
+                    <td><a href="/contact/administration/{{ $bo_contact->id }}/show"><button>SHOW</button></a></td>
                 </tr>
-            @endforeach
+            @empty
+                <p class="bg-danger text-white p-1">No Data</p>
+            @endforelse
         </tbody>
-    </table>    
+    </table>
 </div>

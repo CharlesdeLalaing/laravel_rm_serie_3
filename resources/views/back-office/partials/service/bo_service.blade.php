@@ -12,15 +12,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($bo_services as $bo_service)
+            @forelse ($bo_services as $bo_service)
                 <tr>
-                    <td>{{$bo_service->id}}</td>
-                    <td>{{$bo_service->icon_service}}</td>
-                    <td>{{$bo_service->title_card}}</td>
-                    <td>{{$bo_service->description_card}}</td>
-                    <td><a href="/service/administration/{{$bo_service->id}}/show"><button>SHOW</button></a></td>
+                    <td>{{ $bo_service->id }}</td>
+                    <td>{{ $bo_service->icon_service }}</td>
+                    <td>{{ $bo_service->title_card }}</td>
+                    <td>{{ $bo_service->description_card }}</td>
+                    <td><a href="/service/administration/{{ $bo_service->id }}/show"><button>SHOW</button></a></td>
                 </tr>
-            @endforeach
+            @empty
+                <p class="bg-danger text-white p-1">No Data</p>
+            @endforelse
         </tbody>
-    </table>    
+    </table>
 </div>

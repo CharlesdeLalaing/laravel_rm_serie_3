@@ -11,14 +11,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($bo_headerLogos as $bo_headerLogo)
+            @forelse ($bo_headerLogos as $bo_headerLogo)
                 <tr>
-                    <td>{{$bo_headerLogo->id}}</td>
-                    <td>{{$bo_headerLogo->name}}</td>
-                    <td>{{$bo_headerLogo->logo}}</td>
-                    <td><a href="/top/administration/{{$bo_headerLogo->id}}/show"><button>SHOW</button></a></td>
+                    <td>{{ $bo_headerLogo->id }}</td>
+                    <td>{{ $bo_headerLogo->name }}</td>
+                    <td>{{ $bo_headerLogo->logo }}</td>
+                    <td><a href="/top/administration/{{ $bo_headerLogo->id }}/show"><button>SHOW</button></a></td>
                 </tr>
-            @endforeach
+            @empty
+                <p class="bg-danger text-white p-1">No Data</p>
+            @endforelse
         </tbody>
-    </table>    
+    </table>
 </div>

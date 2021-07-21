@@ -10,14 +10,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($bo_portofolios as $bo_portofolio)
+            @forelse ($bo_portofolios as $bo_portofolio)
                 <tr>
-                    <td>{{$bo_portofolio->id}}</td>
-                    <td>{{$bo_portofolio->data_filter}}</td>
-                    <td>{{$bo_portofolio->filter}}</td>
-                    <td><a href="/portofolio/administration/{{$bo_portofolio->id}}/show"><button>SHOW</button></a></td>
+                    <td>{{ $bo_portofolio->id }}</td>
+                    <td>{{ $bo_portofolio->data_filter }}</td>
+                    <td>{{ $bo_portofolio->filter }}</td>
+                    <td><a href="/portofolio/administration/{{ $bo_portofolio->id }}/show"><button>SHOW</button></a>
+                    </td>
                 </tr>
-            @endforeach
+            @empty
+                <p class="bg-danger text-white p-1">No Data</p>
+            @endforelse
         </tbody>
-    </table>    
+    </table>
 </div>

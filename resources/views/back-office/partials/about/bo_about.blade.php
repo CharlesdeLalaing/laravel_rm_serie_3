@@ -9,13 +9,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($bo_abouts as $bo_about)
+            @forelse ($bo_abouts as $bo_about)
                 <tr>
-                    <td>{{$bo_about->id}}</td>
-                    <td>{{$bo_about->description_about}}</td>
-                    <td><a href="/about/administration/{{$bo_about->id}}/show"><button>SHOW</button></a></td>
+                    <td>{{ $bo_about->id }}</td>
+                    <td>{{ $bo_about->description_about }}</td>
+                    <td><a href="/about/administration/{{ $bo_about->id }}/show"><button>SHOW</button></a></td>
                 </tr>
-            @endforeach
+            @empty
+                <p class="bg-danger text-white p-1">No Data</p>
+            @endforelse
         </tbody>
-    </table>    
+    </table>
 </div>
